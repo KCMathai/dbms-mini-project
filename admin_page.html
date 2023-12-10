@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - Create User</title>
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:   rgba(255, 255, 255, 0.5); /* Use RGBA color with alpha channel for transparency */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome Admin</h1>
+    </header>
+    <form action="create_user.php" method="post">
+        <h2>Create User</h2>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="admin">Admin</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <!-- Add more role options as needed -->
+        </select>
+
+        <button type="submit">Create User</button>
+    </form>
+
+    <form action="add_students.php" method="post">
+        <h2>Add Student</h2>
+
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
+
+        <label for="emailAddress">Email Address:</label>
+        <input type="email" id="emailAddress" name="emailAddress" required>
+
+        <label for="departmentID">Department ID:</label>
+        <input type="text" id="departmentID" name="departmentID" required>
+
+        <label for="userID">User ID:</label>
+        <input type="text" id="userID" name="userID" required>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <form action="add_teachers.php" method="post">
+        <h2>Add Teacher</h2>
+
+        <label for="teacherName">Teacher Name:</label>
+        <input type="text" id="teacherName" name="teacherName" required>
+
+        <label for="emailAddress">Email Address:</label>
+        <input type="email" id="emailAddress" name="emailAddress" required>
+
+        <label for="departmentID">Department ID:</label>
+        <input type="text" id="departmentID" name="departmentID" required>
+
+        <label for="userID">User ID:</label>
+        <input type="text" id="userID" name="userID" required>  
+
+        <button type="submit">Add Teacher</button>
+    </form>
+
+
+    <h2>Database Actions</h2>
+
+        <button type="button" onclick="window.location.href='view_students.php?table=student'">View Student Table</button>
+        <button type="button" onclick="window.location.href='view_teacher.php?table=faculty'">View Teacher Table</button>
+        <button type="button" onclick="window.location.href='view_department.php?table=department'">View Department Table</button>
+        <button type="button" onclick="window.location.href='view_users.php?table=user'">View Users</button>
+
+</body>
+</html>
